@@ -1,0 +1,30 @@
+; AMBER Force Field Minimization Parameters
+; Water model: SPC/E (Amber-compatible)
+
+title                   = AMBER99sb-ildn Energy Minimization BACE1
+
+define                  =            ; Protein Backbone
+integrator              = md         ; Steepest descent for minimization
+dt                      = 0.002
+nsteps                  = 0          ; Maximum steps (0 because for ion placement)
+emtol                   = 1000.0     ; Stop when max force < 1000 kJ/mol/nm
+emstep                  = 0.01       ; Initial step size
+
+; Electrostatics and VdW - CRITICAL AMBER SETTINGS
+coulombtype            = PME         ; For long-range electrostatics in periodic BC
+rcoulomb               = 1.0         ; Short-range electrostatic cut-off (nm)
+rvdw                   = 1.0         ; Short-range VdW cut-off (nm)
+vdwtype                = Cut-off     ; AMBER uses simple cut-off for VdW
+DispCorr               = EnerPres          ; AMBER does not use long-range VdW correction in this way
+
+; Neighbor searching
+nstlist                = 10
+pbc                    = xyz         ; Assuming periodic boundary conditions
+
+; Constraints (typical for AMBER99sb)
+constraints            = none     ; Constrain bonds involving hydrogen
+constraint_algorithm   = lincs
+continuation           = yes          ; This is a first simulation
+
+; Free energy settings (if doing alchemical transformations)
+free-energy            = no          ; Set to yes for λ-dynamics

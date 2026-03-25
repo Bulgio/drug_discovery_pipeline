@@ -1,0 +1,20 @@
+; Minimization
+; Water model: SPC/E (Amber-compatible)
+
+integrator               = steep
+nsteps                   = 100000
+emtol                    = 1000.0  ; FIX: tightened from 5000 (standard threshold)
+emstep                   = 0.01
+nstxout                  = 500
+
+; Electrostatics
+coulombtype              = PME
+rcoulomb                 = 1.0
+rvdw                     = 1.0
+rlist                    = 1.0
+nstlist                  = 10
+cutoff-scheme            = Verlet
+
+; Constraints
+constraints              = h-bonds
+constraint_algorithm     = lincs

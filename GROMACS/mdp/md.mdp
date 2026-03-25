@@ -1,0 +1,45 @@
+; Production MD
+; Water model: SPC/E (Amber-compatible)
+
+integrator               = md
+dt                       = 0.002
+nsteps                   = 5000000 ; 10 ns
+
+; Temperature coupling
+tcoupl                   = v-rescale
+tc-grps                  = Protein Non-Protein
+tau_t                    = 0.1 0.1
+ref_t                    = 300 300
+
+; Pressure coupling
+pcoupl                   = Parrinello-Rahman
+pcoupltype               = isotropic
+tau_p                    = 2.0
+ref_p                    = 1.0
+compressibility          = 4.5e-5
+
+; Electrostatics
+coulombtype              = PME
+rcoulomb                 = 1.0
+rvdw                     = 1.0
+rlist                    = 1.12
+cutoff-scheme            = Verlet
+DispCorr                 = EnerPres
+nstlist                  = 50
+pme_order                = 4
+fourierspacing           = 0.12
+
+; Output control
+nstxout                  = 0
+nstvout                  = 0
+nstfout                  = 0
+nstlog                   = 1000
+nstenergy                = 1000
+nstxout-compressed       = 5000     ; 10 ps
+
+; Constraints
+constraints              = h-bonds
+constraint_algorithm     = LINCS
+continuation             = yes
+lincs_order              = 4
+lincs_iter               = 2
