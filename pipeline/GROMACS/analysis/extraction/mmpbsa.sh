@@ -1,5 +1,5 @@
 #!/bin/bash 
-#SBATCH --mail-user=matteo.bulgini@studenti.polito.it
+#SBATCH --mail-user=
 #SBATCH --mail-type=ALL
 
 
@@ -20,8 +20,8 @@ INP_FILE_DIR="$2"
 NEC_FILES="$INP_FILE_DIR/file_necessary.txt"
 BASE_DIR=$(dirname "$DIR_NAME")
 LOG_DIR="$BASE_DIR/logs/$(basename "$DIR_NAME")"
-VENV_PATH="/home/toscana/scratch/venv_mmpbsa/bin/activate"
-export AMBERHOME=/cvmfs/soft.computecanada.ca/easybuild/software/2023/x86-64-v3/MPI/gcc12/openmpi4/ambertools/25.0
+VENV_PATH= #ENTER VIRTUAL ENVIRONMENT PATH
+export AMBERHOME= # ENTER AMBER99 PATH
 if [[ -n "$SLURM_NTASKS" ]]; then
     NCPUS=$SLURM_NTASKS
 else

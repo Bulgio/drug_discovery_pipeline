@@ -4,9 +4,9 @@
 #SBATCH --time=00:15:00
 #SBATCH --cpus-per-task=1
 #SBATCH --mem=2G
-#SBATCH --output=/home/toscana/scratch/new_GROMACS/logs/launch/output_%j.txt
-#SBATCH --error=/home/toscana/scratch/new_GROMACS/logs/launch/error_%j.txt
-#SBATCH --mail-user=matteo.bulgini@studenti.polito.it
+#SBATCH --output=
+#SBATCH --error=
+#SBATCH --mail-user=
 #SBATCH --mail-type=ALL
 
 # Module loading

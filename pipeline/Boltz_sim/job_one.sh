@@ -7,7 +7,7 @@
 #SBATCH --mem=16G
 #SBATCH --output=logs/output_%j.txt
 #SBATCH --error=logs/error_%j.txt
-#SBATCH --mail-user=matteo.bulgini@studenti.polito.it
+#SBATCH --mail-user=
 #SBATCH --mail-type=ALL
 
 # Caricamento dei moduli 

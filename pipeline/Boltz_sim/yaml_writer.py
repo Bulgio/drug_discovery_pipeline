@@ -8,7 +8,6 @@ import pandas as pd
 import re
 import os
 from pathlib import Path
-from Script_finale.GROMACS.fix_rdkit import Chem
 import json
 import yaml
 import tarfile

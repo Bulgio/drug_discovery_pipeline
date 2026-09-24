@@ -6,11 +6,11 @@ from pathlib import Path
 WORK_DIR = os.getcwd()
 dir_name = os.path.basename(WORK_DIR)
 
-BASE_DIR = Path("/home/toscana/scratch/boltz2/affinity")  # HARDCODED TO ENSURE IT IS CORRECT
+BASE_DIR = Path()  # INSERT PATH
 INPUT_DIR = WORK_DIR
 OUTPUT_DIR = BASE_DIR / "outputs" / dir_name
 LOG_DIR = BASE_DIR / "logs" / dir_name
-cache_dir = "/home/toscana/.boltz"
+cache_dir = # CACHE DIRECTORY
 
 # Check if directories exist
 OUTPUT_DIR.mkdir(parents=True, exist_ok=True)

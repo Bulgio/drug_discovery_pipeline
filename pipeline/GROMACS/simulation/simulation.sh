@@ -5,9 +5,9 @@
 #SBATCH --gpus=a100_3g.20gb:1
 #SBATCH --cpus-per-task=8
 #SBATCH --mem=16G
-#SBATCH --output=/home/toscana/scratch/new_GROMACS/logs/sim/output_%j.txt
-#SBATCH --error=/home/toscana/scratch/new_GROMACS/logs/sim/error_%j.txt
-#SBATCH --mail-user=matteo.bulgini@studenti.polito.it
+#SBATCH --output=
+#SBATCH --error=
+#SBATCH --mail-user=
 #SBATCH --mail-type=ALL
 
 # Module loading

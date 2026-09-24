@@ -1,13 +1,14 @@
+# OBSOLETE BECAUSE DOES NOT FOLLOWS BATCHES
 import os
 import subprocess
 from pathlib import Path
 
 # Define absolute paths
-BASE_DIR = Path("/home/toscana/scratch/boltz2/affinity")  
+BASE_DIR = Path()  
 INPUT_DIR = BASE_DIR / "yaml"
 OUTPUT_DIR = BASE_DIR / "outputs"
 LOG_DIR = BASE_DIR / "logs"
-cache_dir = "/home/toscana/.boltz"
+cache_dir = 
 
 # Check if directories exist
 OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
