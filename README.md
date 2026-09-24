@@ -27,11 +27,12 @@ drug_discovery_pipeline/
     configs/
         environment.yml # Environment variables and python libraries required for the various steps 
     results/
-        figures/
+        figures/ # Figures resulting from the BACE1 application
     pipeline/
         1.screening/
         2.simulation/
         3.analysis/
+    flowchart/  # Flowcharts of the pipeline sections
 
 ## Requirements
 - Database parsing and analysis scripts run on a standard computer
@@ -47,7 +48,7 @@ drug_discovery_pipeline/
   GROMACS and MMPBSA simulation runs were run using the same resource allocation, with an average run of 6 and an half hour for each of the 27 compounds run. 
 
 ## Usage
-Script contained into 'pipeline/' should be run in numerical order. 
+Script contained into 'pipeline/' should be run in numerical order, following the flowcharts contained in 'flowchart/'
 
 ## Limitations
 - Results are computational only; no experimental validation
