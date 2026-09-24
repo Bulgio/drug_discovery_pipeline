@@ -6,11 +6,12 @@ Developed for the MSc thesis "Targeting BACE1 Inhibitors: In Silico Drug Discove
 
 ## Pipeline overview
 
-1. **Retrieval** (`pipeline/Screening/`): seed compounds from DrugBank (10 compounds; requires a DrugBank account), then similar compounds from ChEMBL and PubChem (PubChem 2D similarity search, threshold [90]%).
+1. **Retrieval** (`pipeline/Screening/`): seed compounds from DrugBank (10 compounds; requires a DrugBank account), then similar compounds from ChEMBL and PubChem (PubChem 2D similarity search, threshold 90%).
 2. **Prediction** (`pipeline/Boltz_sim/`): Boltz-2 structure and affinity prediction for 3,819 compounds, in batches of up to 500.
 3. **Ranking** (`pipeline/Boltz_sim/post-sim/`): top 27 selected by Boltz-2 confidence and affinity rank, aggregated into a combined score, with a structural-diversity criterion. 
 
-Combined_score = Confidence_placing*0.2+Affinity_score*0.8 (Arbitrary coefficients decided to balance confidence and affinity)
+    Combined_score = Confidence_placing*0.2+Affinity_score*0.8 (Arbitrary coefficients decided to balance confidence and affinity)
+    Based on these score the compounds are then ranked and the best are selected as potential candidate for the next steps.  
 
 4. **Re-evaluation** (`pipeline/GROMACS/`): 10 ns MD per candidate (single replica), then MM-PBSA binding energy.
 
@@ -19,11 +20,12 @@ Flowcharts: `flowchart/`.
 ## Results on BACE1
 
 - 3,819 compounds screened with Boltz-2; 27 selected and simulated.
-- Full table: [`results/top27.csv`]. Figures: `results/images/`.
+- Full table: `results/top27.csv`. Figures: `results/images/`.
 - MM-PBSA ΔG: mean -22.7 kJ/mol across the 27 (range -33.2 to -14.5).
 - Agreement between Boltz-2 ranking metrics and MM-PBSA ΔG (n = 27):
 
 | Boltz-2 metric  | Pearson r (p) | Spearman ρ (p) |
+| --- | --- | --- |
 | Combined score  | -0.37 (0.055) | -0.36 (0.068)  |
 | Affinity rank   | 0.39 (0.046)  | 0.31 (0.114)   |
 | Confidence rank | 0.30 (0.133)  | 0.24 (0.235)   |
@@ -52,6 +54,7 @@ drug_discovery_pipeline/
 - Boltz-2 and GROMACS/MM-PBSA stages ran on Narval (Digital Research Alliance of Canada), one job per batch or compound:
 
 | Stage             | GPU                                    | CPUs | RAM   |
+| --- | --- | --- | --- |
 | Boltz-2           | A100 MIG slice (`a100_3g.20gb`, 20 GB) | 1    | 16 GB |
 | GROMACS + MM-PBSA | A100 MIG slice (`a100_3g.20gb`, 20 GB) | 8    | 16 GB |
 

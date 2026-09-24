@@ -13,9 +13,6 @@ Example of the data inside:
     "reference": "DB07874"
   }
 keys: ["id","reference"] others are not important to this script
-Directory to target: (Inside the cluster)
-path: 
-> /home/toscana/scratch/boltz2/affinity/outputs/similar_DBXXXXX/boltz_results_yyyyyyy_BACE1
 The similar_DBXXXXX is a problem because it slows the identification of the compounds inside the cluster 
 (it is not good in doing iteration in a lot of files)
 > Resolved using the existing code

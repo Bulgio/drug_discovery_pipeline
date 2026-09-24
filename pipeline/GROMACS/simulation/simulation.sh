@@ -1,6 +1,6 @@
 #!/bin/bash
 #SBATCH --job-name=simulation
-#SBATCH --account=def-jtus
+#SBATCH --account=
 #SBATCH --time=36:00:00
 #SBATCH --gpus=a100_3g.20gb:1
 #SBATCH --cpus-per-task=8

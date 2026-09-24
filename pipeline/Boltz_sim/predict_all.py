@@ -8,7 +8,7 @@ BASE_DIR = Path()
 INPUT_DIR = BASE_DIR / "yaml"
 OUTPUT_DIR = BASE_DIR / "outputs"
 LOG_DIR = BASE_DIR / "logs"
-cache_dir = 
+cache_dir = str(Path.home() / ".boltz")
 
 # Check if directories exist
 OUTPUT_DIR.mkdir(parents=True, exist_ok=True)

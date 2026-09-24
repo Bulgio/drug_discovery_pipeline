@@ -1,5 +1,5 @@
 #!/bin/bash 
-#SBATCH --mail-user=matteo.bulgini@studenti.polito.it
+#SBATCH --mail-user=
 #SBATCH --mail-type=ALL
 
 

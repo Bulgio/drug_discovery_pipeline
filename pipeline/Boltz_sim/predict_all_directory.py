@@ -10,7 +10,7 @@ BASE_DIR = Path()  # INSERT PATH
 INPUT_DIR = WORK_DIR
 OUTPUT_DIR = BASE_DIR / "outputs" / dir_name
 LOG_DIR = BASE_DIR / "logs" / dir_name
-cache_dir = # CACHE DIRECTORY
+cache_dir = str(Path.home() / ".boltz")
 
 # Check if directories exist
 OUTPUT_DIR.mkdir(parents=True, exist_ok=True)

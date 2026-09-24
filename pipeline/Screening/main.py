@@ -528,8 +528,8 @@ def save_drug_data(df, prot_code, formats=['csv', 'json'], filters=None):
 
 def main():
     # Define paths
-    p_data = 'D:\\TESI\\Script_finale\\Screening\\input\\p_data.txt'
-    db_path = 'D:\\TESI\\Script_finale\\Screening\\input\\db_path'
+    p_data = 'Screening\\input\\p_data.txt'
+    db_path = 'Screening\\input\\db_path'
     
     # Get protein code from user
     prot_code = input("Insert the Standard UNIPROT code of the target: ")  # e.g., P56817
@@ -598,7 +598,7 @@ def main():
     # STEP 4: Save results
     print("\n--- STEP 4: SAVING RESULTS ---")
     
-    r_path='D:\\TESI\\Script_finale\\Screening\\input\\ranking.txt'
+    r_path='Screening\\input\\ranking.txt'
     with open(r_path, 'r') as f:
         whitelist = [line.strip() for line in f.readlines()]  
 

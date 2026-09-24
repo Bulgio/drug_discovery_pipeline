@@ -7,7 +7,7 @@ cleaned SDF that antechamber can re-read.
 Usage: python fix_connectivity.py <ligand_pdb> <out_sdf>
 """
 import sys
-from Script_finale.GROMACS.fix_rdkit import Chem
+from rdkit import Chem
 from rdkit.Chem import AllChem, SDWriter
 
 pdb_path = sys.argv[1]

@@ -1,6 +1,6 @@
 #!/bin/bash
 #SBATCH --job-name=boltz2_BACE1_1
-#SBATCH --account=def-jtus
+#SBATCH --account=
 #SBATCH --time=48:00:00
 #SBATCH --gpus=a100_3g.20gb:1
 #SBATCH --cpus-per-task=1

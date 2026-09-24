@@ -3,7 +3,7 @@ charge_calc_complete
 """
 #!/usr/bin/env python3
 
-from Script_finale.GROMACS.fix_rdkit import Chem
+from rdkit import Chem
 import sys
 import os
 

@@ -1,6 +1,6 @@
 #!/bin/bash
 #SBATCH --job-name=GROMACS_launcher
-#SBATCH --account=def-jtus
+#SBATCH --account=
 #SBATCH --time=00:15:00
 #SBATCH --cpus-per-task=1
 #SBATCH --mem=2G
@@ -21,11 +21,11 @@ module load gromacs/2025.4
 
 # Preparatory steps
 
-GEN_INPUT_DIR="/home/toscana/scratch/new_GROMACS/input"
-GEN_OUTPUT_DIR="/home/toscana/scratch/new_GROMACS/output"
-JOB_PATH="/home/toscana/scratch/new_GROMACS/scripts/simulation.sh"
-JOB_DIR="/home/toscana/scratch/new_GROMACS/scripts"
-MDP_DIR="/home/toscana/scratch/new_GROMACS/input/mdp"
+GEN_INPUT_DIR="./new_GROMACS/input"
+GEN_OUTPUT_DIR="./new_GROMACS/output"
+JOB_PATH="./new_GROMACS/scripts/simulation.sh"
+JOB_DIR="./new_GROMACS/scripts"
+MDP_DIR="./new_GROMACS/input/mdp"
 
 mkdir -p $GEN_OUTPUT_DIR
 # FIND THE PDB FILES
