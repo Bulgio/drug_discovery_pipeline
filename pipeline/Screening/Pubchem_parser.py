@@ -25,7 +25,7 @@ from urllib.parse import quote
 
 import requests
 import pandas as pd
-from Script_finale.GROMACS.fix_rdkit import Chem
+from rdkit import Chem
 from rdkit.Chem import PandasTools
 
 def pubchem_smiles_canonical(smiles_code):

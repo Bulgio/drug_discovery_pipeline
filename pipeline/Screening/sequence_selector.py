@@ -16,7 +16,7 @@ import io
 import xml.etree.ElementTree as ET
 import pandas as pd
 import tempfile
-from Script_finale.GROMACS.fix_rdkit import Chem
+from rdkit import Chem
 import csv
 import re
 from urllib.request import urlretrieve
